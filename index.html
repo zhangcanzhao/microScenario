@@ -128,51 +128,9 @@
         </div>
         <nav class="swiper-pagination"></nav>
     </div>
-<script src="js/swiper.js"></script>
-<script src = "js/swiper.animate1.0.2.min.js"></script>
-<script src = "js/flexible_css.debug.js"></script>
-<script src = "js/flexible.debug.js"></script>
-<script>
-    (function(){
-        var mySwiper = new Swiper ('.swiper-container', {
-            loop:"true",
-//            effect:"coverflow",
-//            watchSlidesProgress : true,
-//            watchSlidesVisibility : true,
-            autoplay:5000,
 
-            paginationType : 'fraction',
-            pagination:".swiper-pagination",
-            onInt:function(swiper){
-                swiperAnimateCache(swiper);
-                swiperAnimate(swiper);
-            },
-            onSlideChangeEnd:function(swiper){
-                swiperAnimate(swiper);
-            }
-        });
-
-        var music = document.querySelector(".music");
-        var note = document.querySelector(".music-note");
-        var audio = document.querySelector("audio");
-
-        music.addEventListener("click",function(){
-            if(audio.paused){
-             // alert("2");
-                audio.play();
-                note.style.zIndex=2;
-              music.style.animationPlayState = "running";
-            }else{
-               // alert("1");
-                audio.pause();
-                note.style.zIndex=-1;
-             music.style.animationPlayState = "paused";
-            }
-        })
+<script src = "bower_components/requirejs/require.js" data-main = "main.js"></script>
 
 
-    })()
-
-</script>
 </body>
 </html>
